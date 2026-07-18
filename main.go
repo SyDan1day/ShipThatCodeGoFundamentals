@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int
-	fmt.Scan(&a)
-	fmt.Scan(&b)
-	// Print a + b.
-	fmt.Println(a + b)
+	var w, h int
+	fmt.Scan(&w)
+	fmt.Scan(&h)
+	// Print w * h.
+	fmt.Println(w * h)
 }
