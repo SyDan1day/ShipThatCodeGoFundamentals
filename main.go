@@ -18,7 +18,7 @@ func main() {
 		nums = append(nums, n)
 	}
 	// Find and print the maximum.
-	ans := 0
+	ans := nums[0]
 	for _, v := range nums {
 		if v > ans {
 			ans = v
