@@ -11,12 +11,18 @@ import (
 func main() {
 	r := bufio.NewReader(os.Stdin)
 	line, _ := r.ReadString('\n')
-	line = strings.TrimRight(line, "\r\n")
-	// Try to parse and print the result.
-	result, err := strconv.Atoi(line)
-	if err != nil {
-		fmt.Println("bad")
-		return
+	parts := strings.Fields(strings.TrimSpace(line))
+	nums := make([]int, 0, len(parts))
+	for _, p := range parts {
+		n, _ := strconv.Atoi(p)
+		nums = append(nums, n)
 	}
-	fmt.Printf("ok %d\n", result)
+	// Find and print the maximum.
+	ans := 0
+	for _, v := range nums {
+		if v > ans {
+			ans = v
+		}
+	}
+	fmt.Println(ans)
 }
