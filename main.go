@@ -1,16 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+func square(n int) int {
+	// Return n * n.
+	return n * n
+}
 
 func main() {
 	var n int
 	fmt.Scan(&n)
-	// Loop and sum, then print.
-	sum := 0
-	for i := 1; i <= n; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
+	fmt.Println(square(n))
 }
