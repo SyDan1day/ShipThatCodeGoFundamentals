@@ -1,24 +1,25 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
 )
 
+type Point struct {
+	X, Y int
+}
+
+func (p *Point) distance(q *Point) int {
+	return (p.X-q.X)*(p.X-q.X) + (p.Y-q.Y)*(p.Y-q.Y)
+}
+
 func main() {
-	r := bufio.NewReader(os.Stdin)
-	line, _ := r.ReadString('\n')
-	words := strings.Fields(strings.TrimSpace(line))
-	seen := map[string]bool{}
-	// Add each word and print the size of seen.
-	cnt := 0
-	for _, word := range words {
-		if seen[word] == false {
-			seen[word] = true
-			cnt++
-		}
-	}
-	fmt.Println(cnt)
+	var x1, y1, x2, y2 int
+	fmt.Scan(&x1)
+	fmt.Scan(&y1)
+	fmt.Scan(&x2)
+	fmt.Scan(&y2)
+	// Build two Points and print squared distance.
+	p1 := Point{x1, y1}
+	p2 := Point{x2, y2}
+	fmt.Println(p1.distance(&p2))
 }
